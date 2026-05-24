@@ -3,8 +3,8 @@ import { createClient } from '@supabase/supabase-js'
 import { Platform } from 'react-native'
 import 'react-native-url-polyfill/auto'
 
-const supabaseUrl = 'EXPO_PUBLIC_SUPABASE_URL_REMOVED'
-const supabaseAnonKey = 'EXPO_PUBLIC_SUPABASE_ANON_KEY_REMOVED'
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY!
 
 // AsyncStorage uses window.localStorage on web, which doesn't exist during SSR
 const storage = Platform.OS === 'web'
